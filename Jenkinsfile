@@ -6,11 +6,11 @@ node {
         echo 'Building....'
 		sh 'dotnet restore'
 		//sh 'dotnet build DotnetCoreXUnitProjectTemplate.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}'
-	        sh 'dotnet build'
+	        sh 'dotnet build -c Release'
     }
     stage('Test') {
 		    echo 'Testing....'
-		    sh 'dotnet test'	    
+		    sh 'dotnet test -c Release'	    
     }
     stage('Deploy') {
         echo 'Deploying....'
