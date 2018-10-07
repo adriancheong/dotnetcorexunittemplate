@@ -9,10 +9,8 @@ node {
 	        sh 'dotnet build'
     }
     stage('Test') {
-	    steps {
 		    echo 'Testing....'
-		    sh 'dotnet test'
-	    }	    
+		    sh 'dotnet test'	    
     }
     stage('Deploy') {
         echo 'Deploying....'
