@@ -1,20 +1,11 @@
-stage('Checkout') {
-    echo 'Check out'
+node {
+    stage('Build') {
+        echo 'Building....'
+    }
+    stage('Test') {
+        echo 'Building....'
+    }
+    stage('Deploy') {
+        echo 'Deploying....'
+    }
 }
-
-stage('Build') {
-    echo 'Build'
-}
-
-stage('Test') {
-    echo 'Test'
-}
-
-stage('Scan') {
-    echo 'Scan'
-}
-
-stage('Publish') {
-    echo 'Publish'
-}
-
