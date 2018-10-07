@@ -2,7 +2,7 @@ node {
     stage('Build') {
         echo 'Building....'
         echo "${JOB_NAME}"
-        echo ${env.JOB_NAME}
+        echo "${env.JOB_NAME}"
     }
     stage('Test') {
         echo 'Building....'
