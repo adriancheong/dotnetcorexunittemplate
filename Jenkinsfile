@@ -1,4 +1,4 @@
-node ('linux') {
+node ('linux-agent') {
     stage('Checkout') {
         checkout scm
     }
