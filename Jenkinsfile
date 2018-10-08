@@ -1,4 +1,11 @@
 node {
+	
+    docker.image('node:7-alpine').inside {
+        stage('Docker') {
+            sh 'node --version'
+        }
+    }
+	
     stage('Checkout') {
         checkout scm
     }
