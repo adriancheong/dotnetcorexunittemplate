@@ -1,5 +1,7 @@
 node {
-	
+    stage('WhoAmI') {
+        sh 'whoami'
+    }	
     docker.image('node:7-alpine').inside {
         stage('Docker') {
             sh 'node --version'
