@@ -1,8 +1,6 @@
 node {
     docker.image('microsoft/aspnetcore-build:2.0').inside {
 	    stage('Checkout') {
-		sh 'mkdir /home/temp'
-		sh 'cd /home/temp'
 		checkout scm
 	    }
 	    stage('Build') {
