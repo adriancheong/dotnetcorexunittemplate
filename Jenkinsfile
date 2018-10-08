@@ -1,5 +1,5 @@
 node {
-    docker.image('node:7-alpine').inside {
+    docker.image('microsoft/aspnetcore-build:2.0').inside {
 	    stage('Checkout') {
 		checkout scm
 	    }
