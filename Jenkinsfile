@@ -5,9 +5,9 @@ node {
 	    }
 	    stage('Build') {
 		echo 'Building....'
-			sh 'sudo dotnet restore'
+			sh 'dotnet restore'
 			//sh 'dotnet build DotnetCoreXUnitProjectTemplate.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}'
-			sh 'sudo dotnet build -c Release'
+			sh 'dotnet build -c Release'
 	    }
 	    stage('Test') {
 			    echo 'Testing....'
