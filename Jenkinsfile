@@ -1,13 +1,23 @@
 node {
-    stage('WhoAmI') {
-        sh 'whoami'
-    }	
     docker.image('node:7-alpine').inside {
-        stage('Docker') {
-            sh 'node --version'
-        }
+	    stage('Checkout') {
+		checkout scm
+	    }
+	    stage('Build') {
+		echo 'Building....'
+			sh 'dotnet restore'
+			//sh 'dotnet build DotnetCoreXUnitProjectTemplate.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}'
+			sh 'dotnet build -c Release'
+	    }
+	    stage('Test') {
+			    echo 'Testing....'
+			    sh 'dotnet test -c Release'	    
+	    }
+	    stage('Deploy') {
+		echo 'Deploying....'
+	    }
     }
-	
+/*	
     stage('Checkout') {
         checkout scm
     }
@@ -23,5 +33,5 @@ node {
     }
     stage('Deploy') {
         echo 'Deploying....'
-    }
+    }*/
 }
