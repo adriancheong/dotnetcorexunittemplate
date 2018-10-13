@@ -1,9 +1,9 @@
 node {
-		stage('Checkout') {
-			checkout scm
-		}
+	stage('Checkout') {
+		checkout scm
+	}
+	
 	docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
-
 		stage('Build') {
 			sh 'dotnet restore'
 			sh 'dotnet build -c Release'
