@@ -4,22 +4,19 @@ node {
 		checkout scm
 	    }
 	    stage('Build') {
-		echo 'Building....'
-			sh 'dotnet restore'
-			//sh 'dotnet build DotnetCoreXUnitProjectTemplate.sln /p:Configuration=Release /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}'
-			sh 'dotnet build -c Release'
+		    sh 'dotnet restore'
+		    sh 'dotnet build -c Release'
 	    }
 	    stage('Test') {
 //			    echo 'Testing....'
 //			    sh 'dotnet test -c Release'
 	    }
 	    stage('Publish') {
-		echo 'Publishing....'
 		sh 'dotnet publish -c Release'
 	    }
-	    stage('Deploy') {
-		echo 'Deploying....'
-	    }
+			stage('Docker Buildz') {
+		image = docker.build("adriancheong/${JOB_NAME}:${BUILD_NUMBER}".toLowerCase())
+	}
 	}
 	
 	def image
