@@ -23,7 +23,7 @@ node {
 	}
 	
 	stage('Docker Build') {
-		docker.withRegistry('https://hub.docker.com', 'dockerhub') {
+		docker.withRegistry('https://hub.docker.com/r', 'dockerhub') {
 			def image = docker.build("adriancheong/dotnetcorexunittemplate:latest")
 			image.push()
 		}
