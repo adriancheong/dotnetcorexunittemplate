@@ -24,7 +24,7 @@ node {
 	
 	stage('Docker Build') {
 		def image = docker.build("adriancheong/dotnetcorexunittemplate:latest")
-		image.push()
+		image.push('zzz')
 	}
 	stage('Docker Push') {
 		
