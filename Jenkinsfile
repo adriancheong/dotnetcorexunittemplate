@@ -11,7 +11,11 @@ node {
 	    }
 	    stage('Test') {
 			    echo 'Testing....'
-			    sh 'dotnet test -c Release'	    
+			    sh 'dotnet test -c Release'
+	    }
+	    stage('Publish') {
+		echo 'Publishing....'
+		sh 'dotnet publish -c Release'
 	    }
 	    stage('Deploy') {
 		echo 'Deploying....'
