@@ -23,9 +23,10 @@ node {
 	}
 	
 	stage('Docker Build') {
-		docker.build("adriancheong/dotnetcorexunittemplate:latest")
+		def image = docker.build("adriancheong/dotnetcorexunittemplate:latest")
 	}
 	stage('Docker Push') {
+		image.push()
 	}
 /*	
     stage('Checkout') {
