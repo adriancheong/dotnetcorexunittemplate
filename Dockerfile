@@ -1,4 +1,4 @@
-FROM nexus:50000/microsoft/aspnetcore-build:2.0
+FROM microsoft/aspnetcore-build:2.0
 ENV name ActiveDirectory
 ENV buildconfig Release
 COPY src/$name /root/$name
