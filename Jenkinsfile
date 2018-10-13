@@ -27,7 +27,7 @@ node {
 		image = docker.build("adriancheong/${JOB_NAME}:${BUILD_NUMBER}".toLowerCase())
 	}
 	stage('Docker Push') {
-		docker.withRegistry('', 'dockerhub') {
+		docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
 			image.push()
 		}
 	}
