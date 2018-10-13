@@ -22,14 +22,14 @@ node {
 	    }
 	}
 	
+	def image
 	stage('Docker Build') {
-		docker.withRegistry('', 'dockerhub') {
-			def image = docker.build("adriancheong/dotnetcorexunittemplate:latest")
-			image.push()
-		}
+		image = docker.build("adriancheong/dotnetcorexunittemplate:latest")
 	}
 	stage('Docker Push') {
-		
+		docker.withRegistry('', 'dockerhub') {
+			image.push()
+		}
 	}
 /*	
     stage('Checkout') {
