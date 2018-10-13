@@ -23,7 +23,7 @@ node {
 	}
 	
 	stage('Docker Build') {
-		docker.build("test")
+		docker.build("adriancheong/dotnetcorexunittemplate:latest")
 	}
 	stage('Docker Push') {
 	}
