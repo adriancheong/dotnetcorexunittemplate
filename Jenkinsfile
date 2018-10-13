@@ -1,5 +1,5 @@
 node {
-    docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
+	docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
 	    stage('Checkout') {
 		checkout scm
 	    }
@@ -20,7 +20,15 @@ node {
 	    stage('Deploy') {
 		echo 'Deploying....'
 	    }
-    }
+	}
+	
+	stage('Docker Build') {
+		steps {
+			docker.build
+		}
+	}
+	stage('Docker Push') {
+	}
 /*	
     stage('Checkout') {
         checkout scm
