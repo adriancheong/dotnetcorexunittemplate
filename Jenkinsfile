@@ -24,7 +24,7 @@ node {
 	
 	def image
 	stage('Docker Build') {
-		image = docker.build("adriancheong/${JOB_NAME}:${BUILD_NUMBER}")
+		image = docker.build("adriancheong/${JOB_NAME}:${BUILD_NUMBER}".toLowerCase())
 	}
 	stage('Docker Push') {
 		docker.withRegistry('', 'dockerhub') {
