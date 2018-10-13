@@ -1,5 +1,5 @@
 FROM microsoft/aspnetcore-build:2.0
-ENV name ActiveDirectory
+ENV name DotnetCoreXUnitProjectTemplate
 ENV buildconfig Release
 COPY src/$name /root/$name
 RUN cp /root/$name/GICRootCA.cer /usr/local/share/ca-certificates/GICRootCA.crt && update-ca-certificates
