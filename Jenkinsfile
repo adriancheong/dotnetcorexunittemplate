@@ -26,7 +26,7 @@ node {
 		def image = docker.build("adriancheong/dotnetcorexunittemplate:latest")
 	}
 	stage('Docker Push') {
-		image.push()
+		image.push('latest')
 	}
 /*	
     stage('Checkout') {
