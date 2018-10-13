@@ -23,7 +23,7 @@ node {
 	}
 	
 	stage('Docker Build') {
-		docker.build
+		docker.build("test")
 	}
 	stage('Docker Push') {
 	}
