@@ -10,8 +10,8 @@ node {
 			sh 'dotnet build -c Release'
 	    }
 	    stage('Test') {
-			    echo 'Testing....'
-			    sh 'dotnet test -c Release'
+//			    echo 'Testing....'
+//			    sh 'dotnet test -c Release'
 	    }
 	    stage('Publish') {
 		echo 'Publishing....'
@@ -23,9 +23,7 @@ node {
 	}
 	
 	stage('Docker Build') {
-		steps {
-			docker.build
-		}
+		docker.build
 	}
 	stage('Docker Push') {
 	}
