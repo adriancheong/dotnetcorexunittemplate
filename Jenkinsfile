@@ -1,6 +1,6 @@
 node {
 	stage('Checkout') {
-		input()
+		input(submitter: 'admin')
 		checkout scm
 	}
 	
