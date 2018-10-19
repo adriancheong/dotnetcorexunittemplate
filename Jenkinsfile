@@ -1,6 +1,7 @@
 node {
 	stage('Checkout') {
-		def response = input(message:'Hello World!', submitter: 'admin')
+		//def response = input(message:'Hello World!', submitter: 'admin')
+		input()
 		checkout scm
 	}
 	
