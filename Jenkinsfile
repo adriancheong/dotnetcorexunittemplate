@@ -13,7 +13,7 @@ node {
 			      		text(name: 'text', defaultValue: 'Default text', description: 'text description'),
 			      		password(name: 'password', defaultValue: '', description: 'password description')
 				 ],
-				submitter: 'admi',
+				submitter: 'admin',
 			      	submitterParameter: 'theSubmitter')
 	}
 	
