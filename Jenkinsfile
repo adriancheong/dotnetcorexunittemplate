@@ -3,8 +3,8 @@ node {
 		checkout scm
 		input(message:'Hello World!',
 		      parameters:[
-					[$class: 'TextParameterDefinition', name: "Text"],
-					[$class: 'DateParameterDefinition', name: "Date"]
+					[$class: 'TextParameterDefinition', name: 'Text'],
+					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy']
 				 ])
 	}
 	
