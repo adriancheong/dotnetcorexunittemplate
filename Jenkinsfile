@@ -1,7 +1,7 @@
 node {
 	stage('Checkout') {
 		checkout scm
-		def response = input(message:'Hello World!', submitter: 'admi')
+		def response = input(message:'Hello World!', submitter: 'admin')
 	}
 	
 	docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
