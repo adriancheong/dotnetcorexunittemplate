@@ -5,8 +5,8 @@ node {
 		checkout scm
 		def ressponse = input(message:'Hello World!',
 		      parameters:[
-					[$class: 'TextParameterDefinition', name: 'Text'],
-					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy', defaultValue: '13-11-1982', description: '']
+					[$class: 'TextParameterDefinition', name: 'Text', defaultValue: 'Default Text', description: 'Text Desc'],
+					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy', defaultValue: '13-11-1982', description: 'Date Desc']
 				 ])
 	}
 	
