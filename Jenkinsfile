@@ -1,8 +1,8 @@
 node {
 	stage('Checkout') {
 		checkout scm
-		def response = input(message:'Hello World!',
-				     parameters:[[$class: 'TextParameterDefinition', name: "Test"]])
+		input(message:'Hello World!',
+		      parameters:[[$class: 'AppDetectorParamaterDefinition', name: "Test"]])
 	}
 	
 	docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
