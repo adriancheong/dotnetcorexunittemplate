@@ -6,7 +6,7 @@ node {
 		def ressponse = input(message:'Hello World!',
 		      parameters:[
 					//[$class: 'TextParameterDefinition', name: 'Text'],
-					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy', defaultValue: LocalDate.now(), description: '']
+					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy', defaultValue: new Date(), description: '']
 				 ])
 	}
 	
