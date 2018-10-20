@@ -2,7 +2,7 @@ node {
 	stage('Checkout') {
 		checkout scm
 		def response = input(message:'Hello World!',
-				     parameters:[[$class: 'TextParameterDefinition', defaultValue: '', description: '', name: 'Justification']])
+				     parameters:[[$class: 'TextParameterDefinition']])
 	}
 	
 	docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
