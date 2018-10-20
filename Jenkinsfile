@@ -7,7 +7,7 @@ node {
 		      parameters:[
 					[$class: 'TextParameterDefinition', name: 'Text', defaultValue: 'Default Text', description: 'Text Desc'],
 			      		booleanParam(name: 'Bool', defaultValue: true, description: 'Boolean Param'),
-			      		choice(name: 'Choice', choices: 'A,B,C,D,E', description: 'Choice')
+			      		choice(name: 'Choice', choices: 'A,B,C,D,E', description: 'Choice'),
 					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy', defaultValue: '13-11-1982', description: 'This field requires the Date Parameter Plugin Installed']
 				 ])
 	}
