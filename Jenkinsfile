@@ -5,8 +5,8 @@ node {
 		checkout scm
 		def ressponse = input(message:'Hello World!',
 		      parameters:[
-					//[$class: 'TextParameterDefinition', name: 'Text'],
-					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy', defaultValue: '13111982', description: '']
+					[$class: 'TextParameterDefinition', name: 'Text'],
+					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy', defaultValue: '13-11-1982', description: '']
 				 ])
 	}
 	
@@ -28,8 +28,8 @@ node {
 		image = docker.build("adriancheong/${JOB_NAME}:${BUILD_NUMBER}".toLowerCase())
 	}
 	stage('Docker Push') {
-		docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-			image.push()
-		}
+//		docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+//			image.push()
+//		}
 	}
 }
