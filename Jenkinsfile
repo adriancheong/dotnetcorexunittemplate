@@ -14,7 +14,7 @@ node {
 			      		password(name: 'password', defaultValue: '', description: 'password description')
 				 ],
 				submitter: 'admi',
-			      	submitterParameter)
+			      	submitterParameter: 'theSubmitter')
 	}
 	
 	docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
