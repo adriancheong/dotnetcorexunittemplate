@@ -8,7 +8,8 @@ node {
 					[$class: 'TextParameterDefinition', name: 'TextParameterDefinition', defaultValue: 'Default Text', description: 'TextParameterDefinition'],
 			      		booleanParam(name: 'booleanParam', defaultValue: true, description: 'booleanParam'),
 			      		choice(name: 'choice', choices: ['A','B','C','D','E'], description: 'choice'),
-					[$class: 'DateParameterDefinition', name: 'DateParameterDefinition', dateFormat: 'dd-MM-yyyy', defaultValue: '13-11-1982', description: 'DateParameterDefinition. This field requires the Date Parameter Plugin Installed']
+					[$class: 'DateParameterDefinition', name: 'DateParameterDefinition', dateFormat: 'dd-MM-yyyy', defaultValue: '13-11-1982', description: 'DateParameterDefinition. This field requires the Date Parameter Plugin Installed'],
+			      		run(name: 'run')
 				 ])
 	}
 	
