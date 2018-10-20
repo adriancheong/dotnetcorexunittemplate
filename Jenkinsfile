@@ -11,10 +11,10 @@ node {
 					[$class: 'DateParameterDefinition', name: 'DateParameterDefinition', dateFormat: 'dd-MM-yyyy', defaultValue: '13-11-1982', description: 'DateParameterDefinition. This field requires the Date Parameter Plugin Installed'],
 			      		string(name: 'string', defaultValue: 'Default string', description: 'string description'),
 			      		text(name: 'text', defaultValue: 'Default text', description: 'text description'),
-			      		password(name: 'password', defaultValue: '', description: 'password description'),
-			      		submitter: 'admi',
-			      		submitterParameter()
-				 ])
+			      		password(name: 'password', defaultValue: '', description: 'password description')
+				 ],
+				submitter: 'admi',
+			      	submitterParameter())
 	}
 	
 	docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
