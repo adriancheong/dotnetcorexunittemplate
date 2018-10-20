@@ -4,7 +4,7 @@ node {
 		input(message:'Hello World!',
 		      parameters:[
 					[$class: 'TextParameterDefinition', name: 'Text'],
-					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy']
+					[$class: 'DateParameterDefinition', name: 'Date', dateFormat: 'dd-MM-yyyy', defaultValue: LocalDate.now()]
 				 ])
 	}
 	
