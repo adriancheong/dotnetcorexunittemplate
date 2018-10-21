@@ -4,9 +4,7 @@ import ac.globals.Engine
 node {
 	stage('Checkout') {
 		Engine e = new Engine()
-		Engine ee
-		print e.hello()
-		ee.hello()
+		println e.hello()
 		checkout scm
 		def ressponse = input(message:'Hello World!',
 		      parameters:[
