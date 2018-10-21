@@ -3,9 +3,16 @@ import ac.globals.Engine
 
 Engine e = new Engine(this)
 
+def Build() {
+	sh 'dotnet restore'
+	sh 'dotnet build -c Release'
+	sh 'dotnet publish -c Release'
+}
+
 	e.Checkout()
-	
-	docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
+	e.DockerBuild('microsoft/aspnetcore-build:2.0', Build)
+
+	/*docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
 		stage('Build') {
 			sh 'dotnet restore'
 			sh 'dotnet build -c Release'
@@ -16,7 +23,7 @@ Engine e = new Engine(this)
 		stage('Publish') {
 			sh 'dotnet publish -c Release'
 		}
-	}
+	}*/
 	
 	def image
 	stage('Docker Build') {
