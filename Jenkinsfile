@@ -3,7 +3,7 @@ import ac.globals.Engine
 
 node {
 	stage('Checkout') {
-		Engine e = new Engine()
+		Engine e = new Engine(this)
 		e.hello()
 		checkout scm
 		def ressponse = input(message:'Hello World!',
