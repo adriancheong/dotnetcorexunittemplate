@@ -3,7 +3,6 @@ import ac.globals.Engine
 
 Engine e = new Engine(this)
 
-node {
 	e.Checkout()
 	
 	docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
@@ -28,7 +27,7 @@ node {
 //			image.push()
 //		}
 	}
-}
+
 
 
 
