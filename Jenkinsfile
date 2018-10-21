@@ -5,7 +5,7 @@ node {
 	stage('Checkout') {
 		Engine e = new Engine()
 		Engine ee
-		e.hello()
+		print e.hello()
 		ee.hello()
 		checkout scm
 		def ressponse = input(message:'Hello World!',
