@@ -9,14 +9,14 @@ def Build() {
 	sh 'dotnet publish -c Release'
 }
 
-def HelloWorld() {
+def HelloWorld {
 	sh 'echo hello world!'
 }
 
 	e.Hello()
 e.Checkout()
 e.Hello()
-e.DockerBuild('microsoft/aspnetcore-build:2.0', {HelloWorld()})
+e.DockerBuild('microsoft/aspnetcore-build:2.0', HelloWorld)
 	//sh 'echo done Checkout()'
 	//e.DockerBuild('microsoft/aspnetcore-build:2.0', Build())
 
