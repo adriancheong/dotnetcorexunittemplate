@@ -9,7 +9,7 @@ def Build() {
 	sh 'dotnet publish -c Release'
 }
 
-def HelloWorld {
+def HelloWorld = {
 	sh 'echo hello world!'
 }
 
