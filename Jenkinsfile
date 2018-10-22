@@ -9,15 +9,9 @@ def Build = {
 	sh 'dotnet publish -c Release'
 }
 
-def HelloWorld = {
-	sh 'echo hello world!'
-}
-
 e.Checkout()
 e.DockerBuild('microsoft/aspnetcore-build:2.0', Build)
 
-	//sh 'echo done Checkout()'
-	//e.DockerBuild('microsoft/aspnetcore-build:2.0', Build())
 
 	/*docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
 		stage('Build') {
