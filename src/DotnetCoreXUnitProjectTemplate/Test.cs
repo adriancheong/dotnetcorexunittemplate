@@ -19,7 +19,7 @@ namespace DotnetCoreXUnitProjectTemplate
         [Fact]
         public void FailingTest()
         {
-            Assert.True(true);
+            Assert.True(false);
         }
 
         [Fact]
