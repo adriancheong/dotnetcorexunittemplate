@@ -3,7 +3,7 @@ import ac.globals.Engine
 
 Engine e = new Engine(this)
 
-def Build() {
+def Build = {
 	sh 'dotnet restore'
 	sh 'dotnet build -c Release'
 	sh 'dotnet publish -c Release'
@@ -14,7 +14,7 @@ def HelloWorld = {
 }
 
 e.Checkout()
-e.DockerBuild('microsoft/aspnetcore-build:2.0', HelloWorld)
+e.DockerBuild('microsoft/aspnetcore-build:2.0', Build)
 
 	//sh 'echo done Checkout()'
 	//e.DockerBuild('microsoft/aspnetcore-build:2.0', Build())
