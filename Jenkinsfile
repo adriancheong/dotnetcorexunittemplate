@@ -8,7 +8,6 @@ def Build() {
 	sh 'dotnet build -c Release'
 	sh 'dotnet publish -c Release'
 }
-	e.Hello()
 	e.Checkout()
 	//sh 'echo done Checkout()'
 //	e.DockerBuild('microsoft/aspnetcore-build:2.0', Build())
