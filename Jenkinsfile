@@ -10,6 +10,7 @@ def Build() {
 }
 
 	e.Checkout()
+	sh 'echo done Checkout()'
 	e.DockerBuild('microsoft/aspnetcore-build:2.0', Build())
 
 	/*docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
