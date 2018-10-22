@@ -11,6 +11,7 @@ def Build() {
 	e.Hello()
 e.Checkout()
 e.Hello()
+e.DockerBuild(null, null)
 	//sh 'echo done Checkout()'
 	//e.DockerBuild('microsoft/aspnetcore-build:2.0', Build())
 
