@@ -3,7 +3,7 @@ import ac.globals.Engine
 
 Engine e = new Engine(this)
 
-def Build() {
+def Build {
 	sh 'dotnet restore'
 	sh 'dotnet build -c Release'
 	sh 'dotnet publish -c Release'
