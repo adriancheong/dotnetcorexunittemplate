@@ -11,7 +11,7 @@ def Build = {
 
 e.Checkout()
 e.RunStepsInDockerImage('microsoft/aspnetcore-build:2.0', {
-	Build()
+	Build
 	sh 'dotnet test -c Release'
 })
 e.BuildDockerFile()
