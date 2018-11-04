@@ -12,7 +12,7 @@ def Build = {
 e.Checkout()
 e.DockerBuild('microsoft/aspnetcore-build:2.0', Build)
 e.DockerTest('microsoft/aspnetcore-build:2.0', {sh 'dotnet test -c Release'})
-
+e.BuildDockerFile()
 
 	/*docker.image('microsoft/aspnetcore-build:2.0').inside('-u root') {
 		stage('Build') {
